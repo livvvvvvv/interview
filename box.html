@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>box</title>
+    <style>
+        html *{padding: 0;margin: 0;}
+    </style>
+</head>
+<body>
+    <section datatype="sec">
+        <style>
+            #sec{background: peru}
+            .child{height: 50px;margin:5px;background: aquamarine}
+        </style>
+        <article class="child"></article>
+        <article class="child"></article>
+    </section>
+    <section id="margin">
+        <style>
+            #margin{background: pink;overflow: auto}
+            #margin p{
+                margin: 5px auto 5px auto;
+                background: brown;
+            }
+        </style>
+        <p>1</p>
+        <div style="overflow: hidden;border: 1px solid #333">
+            <p>2</p>
+        </div>
+        <p>3</p>
+    </section>
+    <section id="layout">
+        <style>
+            #layout{background: #366855}
+            #layout .left{float: left;width: 100px;height: 100px;background: #a4de79;}
+            #layout .right{height: 120px;background: #dee780;overflow: auto}
+        </style>
+        <div class="left"></div>
+        <div class="right"></div>
+    </section>
+    <section id="float">
+        <style>
+            #float{
+                background: #7b82c9;
+                overflow: auto;
+                /*float: left;*/
+            }ba
+            #float div{float: left;}
+        </style>
+        <div>左浮动</div>
+    </section>
+    <section>文字内容</section>
+</body>
+</html>

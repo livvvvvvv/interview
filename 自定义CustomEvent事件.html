@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CustomEvent</title>
+    <style>
+        html *{padding: 0;margin: 0;}
+    </style>
+</head>
+<body>
+    <section id="sec">
+        <style>
+            #sec{background: #a4de79}
+        </style>
+        <h1>section</h1>
+    </section>
+
+    <script>
+        const btn=document.getElementById('sec');
+        var ev = new CustomEvent('test', {
+            bubbles: 'true', //是否冒泡
+            cancelable: 'true', //是否运行阻止默认事件
+            detail: 'detail content' //细节参数
+        });
+        btn.addEventListener('test', function (event) {
+            console.log('CustomEvent:');
+            console.log(event.bubbles);
+            console.log(event.cancelable);
+            console.log(event.detail);
+        }, false);
+        btn.dispatchEvent(ev);
+    </script>
+</body>
+</html>

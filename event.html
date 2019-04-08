@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+    <style>
+        html *{padding: 0;margin: 0;}
+    </style>
+</head>
+<body>
+    <section id="sec">
+        <style>
+            #sec{background: #a4de79}
+            #art{background: #ceeedc;overflow: auto}
+            #art h2{float: left;}
+        </style>
+        <h1>section</h1>
+        <article id="art">
+            <h2>article</h2>
+        </article>
+    </section>
+    <script>
+        const sec=document.getElementById('sec');
+        const art=document.getElementById('art');
+        let capture=true;
+        sec.addEventListener('click',function(){
+            event.stopPropagation();
+            console.log('sec event1');
+        },capture);
+        art.addEventListener('click',function(event){
+            console.log('art event1');
+            event.stopImmediatePropagation();
+            event.stopPropagation();
+            print(event);
+        },capture);
+        art.addEventListener('click',function(event){
+            console.log('art event2');
+        },capture);
+        function print(event){
+            console.log('event.curentTarget',event.currentTarget);
+            console.log('event.target',event.target);
+        }
+    </script>
+</body>
+</html>

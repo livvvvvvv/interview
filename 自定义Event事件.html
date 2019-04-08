@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+    <style>
+        html *{padding: 0;margin: 0;}
+    </style>
+</head>
+<body>
+    <section id="sec">
+        <style>
+            #sec{background: #a4de79}
+        </style>
+        <h1>section</h1>
+    </section>
+    <form action="">
+        <input id="btnFile" type="file">
+    </form>
+    <script>
+        const sec=document.getElementById('sec');
+        const eventCustom=new Event('custom');
+        sec.addEventListener('custom',function(){
+            console.log('custom event');
+        })
+        sec.dispatchEvent(eventCustom);
+
+        const btnFile=document.getElementById('btnFile');
+        btnFile.click();
+    </script>
+</body>
+</html>
